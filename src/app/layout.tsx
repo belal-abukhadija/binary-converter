@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Readex_Pro } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const readex = Readex_Pro({ subsets: ["latin", "arabic"], variable: "--font-readex" });
 
 export const metadata: Metadata = {
-  title: "Binary | Premium Text Converter",
-  description: "Convert text to binary and binary to text with style. Full UTF-8 support.",
+  title: "Text to Binary",
+  description: "Convert text to binary and binary back to text as you type. Full UTF-8 support, including Arabic and emoji.",
 };
 
 export default function RootLayout({
@@ -16,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body className="antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+    <html lang="en" className={readex.variable}>
+      <body className="wb">
         {children}
       </body>
     </html>

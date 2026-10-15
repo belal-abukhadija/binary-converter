@@ -1,19 +1,33 @@
+import { Binary } from 'lucide-react';
 import { Converter } from '@/components/Converter';
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex flex-col items-center justify-center py-12 px-4 relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-mesh opacity-40 pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 pointer-events-none mix-blend-overlay" />
+    <>
+      <header className="wb-bar">
+        <a className="wb-brand" href="/">
+          <span className="wb-mark" aria-hidden="true"><Binary /></span>
+          <span className="wb-brand-text">
+            <span className="wb-brand-name">Text to Binary</span>
+            <span className="wb-brand-owner">Belal&apos;s tools</span>
+          </span>
+        </a>
+      </header>
 
-      <div className="relative z-10 w-full">
+      <main className="wb-page">
+        <div className="wb-head">
+          <h1 className="wb-title">Text to binary, and back</h1>
+          <p className="wb-lede">
+            Type on either side and the other updates as you go. Every character is encoded as UTF-8 bytes, so Arabic and emoji round-trip intact.
+          </p>
+        </div>
         <Converter />
-      </div>
+      </main>
 
-      <footer className="absolute bottom-4 text-zinc-500 text-sm font-medium flex items-center gap-1.5 animate-pulse hover:text-zinc-300 transition-colors">
-        Made with <span className="text-red-500">♥</span> by <a href="mailto:belalabukhadija97@gmail.com" className="hover:text-emerald-400 hover:underline transition-all">Belal</a>
+      <footer className="wb-foot">
+        <span>Made by <a href="mailto:belalabukhadija97@gmail.com">Belal</a></span>
+        <span>More free tools at <a href="https://belal.work" target="_blank" rel="noopener noreferrer">belal.work</a></span>
       </footer>
-    </main>
+    </>
   );
 }
